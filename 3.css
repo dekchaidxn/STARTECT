@@ -1,0 +1,333 @@
+body {
+    background: #8DDBC9; 
+    height: 100vh; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0%;
+    
+    align-items: center;
+    position: relative;
+    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
+  }
+
+body::before {
+    content: "";
+    position: fixed; 
+    padding-top: 0%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle,  
+        rgba(255, 255, 255, 0.4) -10%,  
+        rgba(0, 0, 0, 0.3) 40%
+        
+    );
+    
+    mix-blend-mode: overlay;
+    z-index: -1;
+    pointer-events: none; 
+}
+.fb {
+  font-family: system-ui;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3.2rem;
+  position: absolute;
+  left: 40px;
+  bottom: 760px;
+  color: white;
+  
+}
+.nike {
+    font-size: 24rem;
+    color: white;
+    margin: 0; 
+    padding: 10px; 
+    text-align: center;
+    font-family: system-ui;
+    font-weight: 1100;
+    margin-top: 00px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+.img1 {
+    position: absolute;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.img1.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.content {
+    font-family: system-ui;
+    color: black;
+    text-align: center;
+    
+}
+.topic {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.ct {
+    font-size: 20px;
+}
+
+
+.img2 {
+    position: absolute;  
+    width: 360px;
+    margin-left: 1400px;
+    margin-top: 350px;
+    filter: blur(7px);
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.img0.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+
+.img0 {
+    position: absolute;  
+    width: 360px;
+    margin-right: 1440px;
+    margin-top: 350px;
+    filter: blur(7px);
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.img2.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+
+.aboutus {
+    font-family: system-ui;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60px;
+    left: 500px;
+    text-decoration: none;
+}
+
+.aboutus:hover,.mybag:hover {
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.mybag {
+    font-family: system-ui;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+}
+.add {
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: system-ui;
+    width: 190px;
+    height: 80px;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.add:hover {
+    color: black;
+    background-color: white;
+}
+.price {
+    font-family: system-ui;
+    margin-left: 20px;
+
+}
+.logo {
+    margin-left: 1150px;
+    display: flex;
+    flex-direction: row;
+}
+.logo1{
+    height: 80px;
+    width: 160px;
+    margin-top: 20px;
+    
+}
+
+
+/* ป๊อปอัปพื้นหลัง */
+.popup-overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+  }
+
+  /* กล่องเนื้อหา */
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    width: 600px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 550px;
+  }
+
+  /* ปุ่มปิด */
+  .close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* รูปสินค้า */
+  .product-image {
+    width: 150px;
+    left: 20px;
+    top:0;
+    position: absolute;
+  }
+
+  /* ปุ่มไซส์ */
+  .size-selector button {
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 100px;
+    background: none;
+    margin-top: 20px;
+  }
+
+  /* ปุ่มที่ถูกเลือก */
+  .size-selector button.selected {
+    background-color: none;
+    color: black;
+    border: 3px solid #333;
+  }
+
+  /* จำนวน */
+  .quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 15px;
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 150px;
+  }
+
+  .addtocart {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .quantity-selector button {
+    padding: 5px 12px;
+    border: none;
+    font-size: 18px;
+    background: none;
+    
+  }
+
+
+  /* ป๊อปอัปพื้นหลัง */
+.popup-mybag {
+  display: none;
+  position: absolute;
+  bottom: 0px; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+}
+
+/* กล่องเนื้อหา */
+.mybag-content {
+  background: black;
+  padding: 20px;
+  width: 600px;
+  height: 700px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-left: 1250px;
+}
+
+/* ปุ่มปิด */
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-mybag {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* รูปสินค้า */
+.img-mybag {
+  width: 150px;
+  left: 20px;
+  top:110px;
+  position: absolute;
+}

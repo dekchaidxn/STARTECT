@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kingmaster5</title>
+    <link rel="stylesheet" href="5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="header">
+        <p class="fb">KING MASTER</p>
+        <a class="aboutus" href="aboutus.html">About me</a>
+        <button class="mybag" id="btn-mybag">My bag [1]</button>
+    </div>
+    <h1 class="nike">NIKE</h1>
+    <img src="img5.png" id="img1" class="img1" data-fade >
+    <div class="content">
+        <p class="topic" data-fade>
+          NIKE MERCURIAL SUPERFLY 10 ELITE FG
+        </p>
+        <p class="ct" data-fade>
+          Nike Mercurial Superfly 10 Elite
+          FG High-Top Soccer Cleats
+          Obsessed with speed? So are the game's biggest stars. That's why we made these Elite cleats with an improved 3/4-length Air Zoom unit. <br>It gives you and the sport's fastest players the propulsive feel needed to break through the back line.  <br>The result is the most responsive Mercurial we've ever made, because you demand greatness from yourself and your footwear.
+    </div>
+    
+    <img src="img4.png" id="img0" class="img0" onclick="window.location.href='4.html'" data-fade>
+
+    <div class="footer">
+        <button class="add" id="openPopupBtn" onclick="window.location.href='#'">Add to Bag</button>
+        <p class="price">Strating at $699</p>
+        <div class="logo">
+            <img src="logo1.png" class="logo1">
+            <img src="logo2.png" class="logo2">
+        </div>
+    </div>
+
+    <!-- ป๊อปอัป -->
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+          <span id="closePopupBtn" class="close-btn">&times;</span>
+    
+          <img src="img5.png" alt="รองเท้า" class="product-image">
+    
+          
+          <p style="font-family: system-ui; text-align: start; margin-left: 160px; margin-top: 10px;">NIKE MERCURIAL SUPERFLY 10 ELITE<br>   NU1 FG - PURPLE AGATE/BARELY VOLT</p>
+          <p style="font-family: system-ui; color: red;text-align: start;margin-left: 160px; margin-top: -10px;">11,000 THB</p>
+          <p style="font-family: system-ui; color:gray;text-align: start;margin-left: 160px; margin-top: -10px;">รหัสสินค้า : HF1603-500</p>
+
+          <div class="size-selector">
+            <button>40</button>
+            <button>41</button>
+            <button>42</button>
+            <button>43</button>
+          </div>
+    
+          <div class="quantity-selector">
+            <button id="decreaseBtn">-</button>
+            <span id="quantity">1</span>
+            <button id="increaseBtn">+</button>
+          </div>
+          <button class="addtocart" id="closePopupbtn">
+            ADD TO BAG
+          </button>
+        </div>
+      </div>
+
+      <!-- ป๊อปอัป-mybag -->
+       <div id="popup-mybag" class="popup-mybag">
+        <div id="mybag=content" class="mybag-content">
+          <span id="close-mybag" class="close-mybag">&times;</span>
+          <img src="img1.png" alt="ร้องเท้า" class="img-mybag">
+          <p style="font-family: system-ui; color: white; text-align: center; margin-left: 0; margin-top: 10px; font-size: 25px; font-weight: 700;">MY BAG</p>
+          <p style="font-family: system-ui; font-size: 20px;  font-weight:900; color: white; text-align: start; margin-left: 80px; margin-top: 0px;">Cart</p>
+          <p style="font-family: system-ui; font-size: 20px;  font-weight:900; color: white; position: absolute; right: 20px; top: 70px;">Qty<br><br>1</p>
+          <p style="font-family: system-ui; color: white;text-align: start; margin-left: 160px; margin-top: 10px;">NIKE MERCURIAL SUPERFLY 10 ELITE<br>   NU1 FG - PURPLE AGATE/BARELY VOLT</p>
+          <p style="font-family: system-ui; color: red;text-align: start;margin-left: 160px; margin-top: -10px;">11,000 THB</p>
+          <p style="font-family: system-ui; color:gray;text-align: start;margin-left: 160px; margin-top: -10px;">รหัสสินค้า : HF1603-500</p>
+          <i class='bx bx-trash' style="color: white; font-size: 30px; position: absolute; right: 20px; top: 200px;"></i>
+          <button style="background-color: white; color: black; width: 130px; height: 40px; border-radius: 10px; font-size: 20px; border: none; position: absolute;
+          bottom: 20px; left: 270px; font-weight: 700;font-family: system-ui;">BUY</button>
+          <p style="font-family: system-ui; font-size: 20px;  font-weight:900; color: white; position: absolute; left: 40px; margin-top: 350px;"> Total</p>
+          <p style="font-family: system-ui; font-size: 20px;  font-weight:900; color: red; position: absolute; right: 40px; margin-top: 350px;"> 11,000 THB</p>
+
+
+        </div>
+       </div>
+
+    <script>
+        window.addEventListener("load", function () {
+          document.body.classList.add("loaded");
+        });
+
+        window.addEventListener("load", function () {
+    document.querySelectorAll("[data-fade]").forEach(img => {
+      img.classList.add("loaded");
+    });
+  });
+
+
+  const openBtn = document.getElementById("openPopupBtn");
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("closePopupBtn");
+    const closebtn = document.getElementById("closePopupbtn");
+
+    const quantityDisplay = document.getElementById("quantity");
+    const increaseBtn = document.getElementById("increaseBtn");
+    const decreaseBtn = document.getElementById("decreaseBtn");
+
+    const sizeButtons = document.querySelectorAll(".size-selector button");
+
+    let quantity = 1;
+
+    // เปิดป๊อปอัป
+    openBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
+
+    // ปิดป๊อปอัป
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    closebtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    // เพิ่มจำนวน
+    increaseBtn.addEventListener("click", () => {
+      quantity++;
+      quantityDisplay.textContent = quantity;
+    });
+
+    // ลดจำนวน (แต่ไม่ต่ำกว่า 1)
+    decreaseBtn.addEventListener("click", () => {
+      if (quantity > 1) {
+        quantity--;
+        quantityDisplay.textContent = quantity;
+      }
+    });
+
+    // เลือกไซส์รองเท้า
+    sizeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        sizeButtons.forEach(btn => btn.classList.remove("selected"));
+        button.classList.add("selected");
+      });
+    });
+
+
+
+    const btnmybag = document.getElementById("btn-mybag");
+    const popupmybag = document.getElementById("popup-mybag");
+    const closemybag = document.getElementById("close-mybag");
+
+    // เปิดป๊อปอัป
+    btnmybag.addEventListener("click", () => {
+      popupmybag.style.display = "flex";
+    });
+
+    // ปิดป๊อปอัป
+    closemybag.addEventListener("click", () => {
+      popupmybag.style.display = "none";
+    });
+ 
+      </script>
+</body>
+</html>
